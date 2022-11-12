@@ -5,7 +5,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.jetbrains.annotations.NotNull;
-import xyz.mlserver.mc.util.glow.GlowAPI;
+import xyz.mlserver.util.glow.GlowAPI;
 
 public class PlayerJoinListener implements Listener {
 
