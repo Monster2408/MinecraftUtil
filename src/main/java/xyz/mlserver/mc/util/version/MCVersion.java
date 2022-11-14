@@ -14,6 +14,12 @@ public enum MCVersion {
         ダミーバージョン例
         v1_18_2(-1, -1, "1.18.2", VersionType.DUMMY)
     */
+    v1_19_3(-1, -1, "1.19.3", VersionType.DUMMY),
+    SNAPSHOT_22W45A(0x4000006B, 3207, v1_19_3, "snapshot_22w45a",VersionType.SNAPSHOT),
+    SNAPSHOT_22W44A(0x4000006A, 3207, v1_19_3, "snapshot_22w44a",VersionType.SNAPSHOT),
+    SNAPSHOT_22W43A(0x40000069, 3206, v1_19_3, "snapshot_22w43a",VersionType.SNAPSHOT),
+    SNAPSHOT_22W42A(0x40000068, 3205, v1_19_3, "snapshot_22w42a",VersionType.SNAPSHOT),
+
     v1_19_2    (760,        3120,            "v1_19_2",        VersionType.RELEASE),
     v1_19_2_RC2(0x40000067, 3119, v1_19_2, "v1_19_2_rc2",      VersionType.RELEASE_CANDIDATE),
     v1_19_2_RC1(0x40000066, 3118, v1_19_2, "v1_19_2_rc1",      VersionType.RELEASE_CANDIDATE),
