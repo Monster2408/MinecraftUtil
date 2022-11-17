@@ -6,7 +6,7 @@
 
     <groupId>xyz.mlserver</groupId>
     <artifactId>MinecraftUtil</artifactId>
-    <version>1.0.0-SNAPSHOT-1</version>
+    <version>1.0.0</version>
 
     <properties>
         <!-- 文字コード -->
