@@ -112,9 +112,7 @@ sup {
 .aboutLanguage {
     float:right;
     padding:0px 21px;
-    font-size:11px;
     z-index:200;
-    margin-top:-9px;
 }
 .legalCopy {
     margin-left:.5em;
