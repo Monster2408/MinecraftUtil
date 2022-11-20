@@ -5,7 +5,7 @@
 [![Discord](https://discord.com/api/guilds/556844677115150366/widget.png)](https://discord.mlserver.xyz)
 [Website](https://monster2408.com)
 
-[Java Docs](https://docs.mlserver.jp/)
+[Java Docs](https://docs.mlserver.jp/MinecraftUtil/)
 
 ```xml
 <project>
