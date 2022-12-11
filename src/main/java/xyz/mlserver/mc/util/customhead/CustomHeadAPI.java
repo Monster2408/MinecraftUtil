@@ -10,6 +10,11 @@ import xyz.mlserver.mc.util.itemstack.CustomItem;
 import java.lang.reflect.Field;
 import java.util.UUID;
 
+/**
+ * <p>
+ *     CustomHeadAPI of <a href="https://minecraft-heads.com/" target="_blank">Minecraft Heads</a>
+ * </p>
+ */
 public class CustomHeadAPI {
 
     private static final String prefix = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUv";
