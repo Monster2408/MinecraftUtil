@@ -1,6 +1,15 @@
 package xyz.mlserver.java;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class JsonUtil {
 
@@ -33,5 +42,29 @@ public class JsonUtil {
         return json.toString();
     }
 
+
+    /**
+     * JsonAPIのURLからString型でデータを取得する
+     * @param urlString Json APIのURL
+     * @return Json APIのレスポンス
+     */
+    public static String getResult(String urlString){
+        StringBuilder result = new StringBuilder();
+        try{
+            URL url = new URL(urlString);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.connect();
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String tmp = "";
+            while ((tmp = in.readLine()) != null) {
+                result.append(tmp);
+            }
+            in.close();
+            con.disconnect();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return result.toString();
+    }
 
 }
