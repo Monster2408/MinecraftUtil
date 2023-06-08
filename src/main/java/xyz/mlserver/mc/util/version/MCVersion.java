@@ -14,21 +14,20 @@ public enum MCVersion {
         ダミーバージョン例
         v1_18_2(-1, -1, "1.18.2", VersionType.DUMMY)
     */
-    v1_20(-1, -1, "1.20", VersionType.DUMMY),
-
-    v1_20_RC1(0x4000008D, 3362, v1_20, "v1.20_rc1", VersionType.RELEASE_CANDIDATE),
-    v1_20_PRE7(0x4000008C, 3361, v1_20, "v1.20_pre7", VersionType.PRERELEASE),
-    v1_20_PRE6(0x4000008B, 3360, v1_20, "v1.20_pre6", VersionType.PRERELEASE),
-    v1_20_PRE5(0x4000008A, 3358, v1_20, "v1.20_pre5", VersionType.PRERELEASE),
-    v1_20_PRE4(0x40000089, 3357, v1_20, "v1.20_pre4", VersionType.PRERELEASE),
-    v1_20_PRE3(0x40000088, 3356, v1_20, "v1.20_pre3", VersionType.PRERELEASE),
-    v1_20_PRE2(0x40000087, 3355, v1_20, "v1.20_pre2", VersionType.PRERELEASE),
+    v1_20(763, 3463, "1.20", VersionType.RELEASE),
+    v1_20_RC1(0x4000008D, 3462, v1_20, "v1.20_rc1", VersionType.RELEASE_CANDIDATE),
+    v1_20_PRE7(0x4000008C, 3461, v1_20, "v1.20_pre7", VersionType.PRERELEASE),
+    v1_20_PRE6(0x4000008B, 3460, v1_20, "v1.20_pre6", VersionType.PRERELEASE),
+    v1_20_PRE5(0x4000008A, 3458, v1_20, "v1.20_pre5", VersionType.PRERELEASE),
+    v1_20_PRE4(0x40000089, 3457, v1_20, "v1.20_pre4", VersionType.PRERELEASE),
+    v1_20_PRE3(0x40000088, 3456, v1_20, "v1.20_pre3", VersionType.PRERELEASE),
+    v1_20_PRE2(0x40000087, 3455, v1_20, "v1.20_pre2", VersionType.PRERELEASE),
     v1_20_PRE1(0x40000086, 3454, v1_20, "v1.20_pre1", VersionType.PRERELEASE),
-    SNAPSHOT_23W18A(0x40000085, 3353, v1_20, "snapshot_23w18a", VersionType.SNAPSHOT),
-    SNAPSHOT_23W17A(0x40000084, 3352, v1_20, "snapshot_23w17a", VersionType.SNAPSHOT),
-    SNAPSHOT_23W16A(0x40000083, 3349, v1_20, "snapshot_23w16a", VersionType.SNAPSHOT),
-    SNAPSHOT_23W14A(0x40000082, 3345, v1_20, "snapshot_23w14a", VersionType.SNAPSHOT),
-    SNAPSHOT_23W13A(0x40000080, 3343, v1_20, "snapshot_23w13a", VersionType.SNAPSHOT),
+    SNAPSHOT_23W18A(0x40000085, 3453, v1_20, "snapshot_23w18a", VersionType.SNAPSHOT),
+    SNAPSHOT_23W17A(0x40000084, 3452, v1_20, "snapshot_23w17a", VersionType.SNAPSHOT),
+    SNAPSHOT_23W16A(0x40000083, 3449, v1_20, "snapshot_23w16a", VersionType.SNAPSHOT),
+    SNAPSHOT_23W14A(0x40000082, 3445, v1_20, "snapshot_23w14a", VersionType.SNAPSHOT),
+    SNAPSHOT_23W13A(0x40000080, 3443, v1_20, "snapshot_23w13a", VersionType.SNAPSHOT),
     SNAPSHOT_23W12A(0x4000007F, 3442, v1_20, "snapshot_23w12a", VersionType.SNAPSHOT),
 
 
