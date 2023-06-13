@@ -14,6 +14,8 @@ public enum MCVersion {
         ダミーバージョン例
         v1_18_2(-1, -1, "1.18.2", VersionType.DUMMY)
     */
+    v1_20_1(763, 3465, "1.20.1", VersionType.RELEASE),
+    v1_20_1_RC1(0x4000008E, 3464, v1_20_1, "v1.20.1_rc1", VersionType.RELEASE_CANDIDATE),
     v1_20(763, 3463, "1.20", VersionType.RELEASE),
     v1_20_RC1(0x4000008D, 3462, v1_20, "v1.20_rc1", VersionType.RELEASE_CANDIDATE),
     v1_20_PRE7(0x4000008C, 3461, v1_20, "v1.20_pre7", VersionType.PRERELEASE),
