@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Deprecated
+/**
+ * @deprecated This class is deprecated. Please use <a href="https://github.com/Monster2408/MCVersion" target="_blank">MCVersion</a> Library.
+ */
 public enum MCVersion {
 
     /*
