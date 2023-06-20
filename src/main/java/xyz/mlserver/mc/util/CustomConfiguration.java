@@ -120,14 +120,15 @@ public class CustomConfiguration {
      * @param loc {@link Location}
      */
     public void setLocation(String path, Location loc) {
+        Location tempLoc = loc.clone();
         if (config == null) reloadConfig();
         try {
-            config.set(path + ".W", loc.getWorld().getName());
-            config.set(path + ".X", loc.getX());
-            config.set(path + ".Y", loc.getY());
-            config.set(path + ".Z", loc.getZ());
-            config.set(path + ".Yaw", String.valueOf(loc.getYaw()));
-            config.set(path + ".Pitch", String.valueOf(loc.getPitch()));
+            config.set(path + ".W", tempLoc.getWorld().getName());
+            config.set(path + ".X", tempLoc.getX());
+            config.set(path + ".Y", tempLoc.getY());
+            config.set(path + ".Z", tempLoc.getZ());
+            config.set(path + ".Yaw", String.valueOf(tempLoc.getYaw()));
+            config.set(path + ".Pitch", String.valueOf(tempLoc.getPitch()));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -148,7 +149,7 @@ public class CustomConfiguration {
                     config.getDouble(path + ".X"),
                     config.getDouble(path + ".Y"),
                     config.getDouble(path + ".Z")
-            );
+            ).clone();
         } else {
             return new Location(
                     Bukkit.getWorld(config.getString(path + ".W")),
@@ -157,7 +158,7 @@ public class CustomConfiguration {
                     config.getDouble(path + ".Z"),
                     Float.parseFloat(config.getString(path + ".Yaw")),
                     Float.parseFloat(config.getString(path + ".Pitch"))
-            );
+            ).clone();
         }
     }
 }
