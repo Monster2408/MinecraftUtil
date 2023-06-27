@@ -1,6 +1,8 @@
 package xyz.mlserver.java.lang;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import xyz.mlserver.java.lang.event.LanguageChangeEvent;
 import xyz.mlserver.java.sql.DataBase;
 
 import java.sql.Connection;
@@ -60,6 +62,7 @@ public class LanguageSQL {
 
     public void setLanguage(String uuid, Language language) {
         createTable();
+        Language beforeLanguage = getLanguage(uuid);
         String sql = "insert into languages (uuid, lang) "
                 + "VALUES (?, ?) "
                 +"ON DUPLICATE KEY UPDATE "
@@ -72,6 +75,7 @@ public class LanguageSQL {
             prestat.setString(3, uuid);
             prestat.setString(4, language.getId());
             prestat.executeUpdate();
+            Bukkit.getPluginManager().callEvent(new LanguageChangeEvent(uuid, beforeLanguage, language));
         } catch (SQLException e) {
             e.printStackTrace();
         }
