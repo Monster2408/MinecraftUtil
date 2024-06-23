@@ -121,12 +121,25 @@ public class CustomConfiguration {
      */
     public void setLocation(String path, Location loc) {
         Location tempLoc = loc.clone();
+        setLocation(path, tempLoc, false);
+    }
+
+    /**
+     * Save {@link Location} to {@link FileConfiguration}
+     * @param path {@link String}
+     * @param loc {@link Location}
+     * @param noYawPitch {@link Boolean}
+     */
+    public void setLocation(String path, Location loc, boolean noYawPitch) {
+        Location tempLoc = loc.clone();
         if (config == null) reloadConfig();
         try {
+            config.set(path, null);
             config.set(path + ".W", tempLoc.getWorld().getName());
             config.set(path + ".X", tempLoc.getX());
             config.set(path + ".Y", tempLoc.getY());
             config.set(path + ".Z", tempLoc.getZ());
+            if (noYawPitch) return;
             config.set(path + ".Yaw", String.valueOf(tempLoc.getYaw()));
             config.set(path + ".Pitch", String.valueOf(tempLoc.getPitch()));
         } catch (Exception e) {
@@ -137,12 +150,13 @@ public class CustomConfiguration {
     /**
      * Get {@link Location} from {@link FileConfiguration}
      * @param path {@link String}
+     * @param defaultLocation {@link Location}
      * @return {@link Location}
      */
-    public Location getLocation(String path) {
+    public Location getLocation(String path, Location defaultLocation) {
         if (config == null) reloadConfig();
-        if (config.getString(path + ".W") == null) return null;
-        if (Bukkit.getWorld(config.getString(path + ".W")) == null) return null;
+        if (config.getString(path + ".W") == null) return defaultLocation;
+        if (Bukkit.getWorld(config.getString(path + ".W")) == null) return defaultLocation;
         if (config.get(path + ".Yaw") == null && config.get(path + ".Pitch") == null) {
             return new Location(
                     Bukkit.getWorld(config.getString(path + ".W")),
@@ -160,5 +174,14 @@ public class CustomConfiguration {
                     Float.parseFloat(config.getString(path + ".Pitch"))
             ).clone();
         }
+    }
+
+    /**
+     * Get {@link Location} from {@link FileConfiguration}
+     * @param path {@link String}
+     * @return {@link Location}
+     */
+    public Location getLocation(String path) {
+        return getLocation(path, null);
     }
 }
