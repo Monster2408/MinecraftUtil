@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 /**
  * カウントダウン時の共通関数を集めたClass
  */
+@Deprecated
 public class CountdownAPI {
 
     /**

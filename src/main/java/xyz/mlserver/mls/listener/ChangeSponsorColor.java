@@ -6,6 +6,7 @@ import org.bukkit.event.HandlerList;
 
 import java.util.UUID;
 
+@Deprecated
 public class ChangeSponsorColor extends Event {
 
     private static final HandlerList HANDLERS = new HandlerList();

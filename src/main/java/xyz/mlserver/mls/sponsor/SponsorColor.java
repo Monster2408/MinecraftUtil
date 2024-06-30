@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
 
+@Deprecated
 public class SponsorColor {
 
     private final DataBase dataBase;

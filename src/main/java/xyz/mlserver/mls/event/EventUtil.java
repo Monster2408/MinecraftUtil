@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
+@Deprecated
 public class EventUtil {
 
     private static Table<MLSEvent, String, Integer> winDataTable;

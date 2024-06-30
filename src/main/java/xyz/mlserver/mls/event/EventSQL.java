@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.UUID;
 
+@Deprecated
 public class EventSQL {
 
     private final DataBase dataBase;

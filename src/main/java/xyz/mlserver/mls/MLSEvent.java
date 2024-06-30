@@ -1,5 +1,6 @@
 package xyz.mlserver.mls;
 
+@Deprecated
 public enum MLSEvent {
     AOONI6_23("aooni6_23", "aoonidata", "青鬼ゲーム6.23"),
     AOONI3_0("aooni3_0", "aooni3_0data", "青鬼ゲーム3.0"),

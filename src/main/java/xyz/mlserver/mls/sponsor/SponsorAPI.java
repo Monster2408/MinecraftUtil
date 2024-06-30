@@ -2,6 +2,7 @@ package xyz.mlserver.mls.sponsor;
 
 import org.bukkit.entity.Player;
 
+@Deprecated
 public class SponsorAPI {
 
     /**

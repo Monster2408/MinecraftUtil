@@ -5,6 +5,7 @@ import org.bukkit.entity.Player;
 import java.util.HashMap;
 import java.util.UUID;
 
+@Deprecated
 public enum MLSMember {
     GINGER_ALE10("Ginger_Ale10", UUID.fromString("95593263-edef-4f07-a6bb-efd7a05e2652"), "ぎんあれ"),
     MONSTER2408("Monster2408", UUID.fromString("1c2b6991-e8ce-4e5d-b4d8-ec3f0cdc5f8e"), "もんすたぁ"),
