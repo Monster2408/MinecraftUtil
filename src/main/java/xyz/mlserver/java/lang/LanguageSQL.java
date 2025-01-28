@@ -37,6 +37,7 @@ public class LanguageSQL {
     public Language getLanguage(UUID uuid) { return getLanguage(uuid.toString()); }
 
     public Language getLanguage(String uuid) {
+        if (dataBase == null) return Language.ENGLISH;
         createTable();
         String sql = "SELECT * FROM languages where uuid=?;";
         Language language;
@@ -61,6 +62,7 @@ public class LanguageSQL {
     public void setLanguage(UUID uuid, Language language) { this.setLanguage(uuid.toString(), language); }
 
     public void setLanguage(String uuid, Language language) {
+        if (dataBase == null) return;
         createTable();
         Language beforeLanguage = getLanguage(uuid);
         String sql = "insert into languages (uuid, lang) "
