@@ -21,6 +21,7 @@ public class LanguageSQL {
      */
     public LanguageSQL(DataBase dataBase) {
         this.dataBase = dataBase;
+        createTable();
     }
 
     public DataBase getDataBase() {
@@ -37,11 +38,10 @@ public class LanguageSQL {
     public Language getLanguage(UUID uuid) { return getLanguage(uuid.toString()); }
 
     public Language getLanguage(String uuid) {
-        if (dataBase == null) return Language.ENGLISH;
-        createTable();
+        if (getDataBase() == null) return Language.ENGLISH;
         String sql = "SELECT * FROM languages where uuid=?;";
         Language language;
-        try(Connection con = dataBase.getDataSource().getConnection();
+        try(Connection con = getDataBase().getDataSource().getConnection();
             PreparedStatement prestat = con.prepareStatement(sql)) {
             prestat.setString(1, uuid);
             ResultSet result = prestat.executeQuery();
@@ -62,15 +62,14 @@ public class LanguageSQL {
     public void setLanguage(UUID uuid, Language language) { this.setLanguage(uuid.toString(), language); }
 
     public void setLanguage(String uuid, Language language) {
-        if (dataBase == null) return;
-        createTable();
+        if (getDataBase() == null) return;
         Language beforeLanguage = getLanguage(uuid);
         String sql = "insert into languages (uuid, lang) "
                 + "VALUES (?, ?) "
                 +"ON DUPLICATE KEY UPDATE "
                 +"uuid=?, "
                 +"lang=?;";
-        try(Connection con = dataBase.getDataSource().getConnection();
+        try(Connection con = getDataBase().getDataSource().getConnection();
             PreparedStatement prestat = con.prepareStatement(sql)) {
             prestat.setString(1, uuid);
             prestat.setString(2, language.getId());
@@ -84,12 +83,13 @@ public class LanguageSQL {
     }
 
     private void createTable() {
+        if (getDataBase() == null) return;
         String sql = "create table if not exists languages (" +
                 "uuid varchar(36) NOT NULL PRIMARY KEY," +
                 "lang varchar(100) default '" + Language.JAPANESE.getId() + "' not null" +
                 ");"
                 ;
-        try(Connection con = dataBase.getDataSource().getConnection();
+        try(Connection con = getDataBase().getDataSource().getConnection();
             PreparedStatement prestat = con.prepareStatement(sql)) {
             prestat.execute();
         } catch (SQLException e) {
